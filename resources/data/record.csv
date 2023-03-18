@@ -1,0 +1,13 @@
+plot_type,genre,year,age
+line,thriller,2015,32
+scatter,thriller,2015,32
+line,thriller,2015,32
+scatter,romance,2022,21
+bar,romance,all,20
+scatter,thriller,all,20
+pie,action,2022,44
+pie,action,2022,44
+histogram,horror,all,22
+bar,Sci-fi,all,22
+scatter,animation,all,22
+pie,comedy,2022,83
