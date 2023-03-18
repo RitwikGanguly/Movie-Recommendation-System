@@ -106,7 +106,7 @@ st.write(
 """
 )
 
-st.subheader("👉 THE GITHUB LINK OF THIS PROJECT: {}".format("https://github.com/RitwikGanguly/Movie-Recommendation-System"))
+st.subheader("👉 THE GITHUB LINK OF THIS PROJECT: {}".format("https://github.com/RitwikGanguly/Movie-Recommendation-System/tree/master"))
 
 
 
