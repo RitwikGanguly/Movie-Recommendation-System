@@ -38,45 +38,45 @@ selected_movie_name = st.selectbox("👉 Gather Your Choices:- ", movies)
 st.write("👉 do you wanna see :red[_THEMAGIC_] 🤩🤩")
 butt = st.button("Yeah!!!")
 # Web scraping section ---------------------------------------------------------------------------------------------
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-
-driver = webdriver.Chrome(executable_path=r'C:\Users\RITWIK GANGULY\anaconda3\chromedriver.exe')
-
-def img_url(a):
-    p = []
-    driver.get("https://www.google.com/?&bih=746&biw=1536&hl=en")
-    try:
-        driver.find_element(By.XPATH, '/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input').clear()
-        driver.find_element(By.XPATH, '/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input').send_keys(a)
-
-    except:
-        driver.find_element(By.XPATH, '//*[@id="APjFqb"]').clear()
-        driver.find_element(By.XPATH, '//*[@id="APjFqb"]').send_keys(a)
-
-    driver.find_element(By.XPATH, "/html/body/div[1]/div[3]/form/div[1]/div[1]/div[4]/center/input[1]").click()
-    try:
-        image = driver.find_element(By.XPATH, '//*[@id="tsuid_32"]').get_attribute('src')
-        p.append(image)
-
-
-    except:
-
-        try:
-            # for 2nd position
-            driver.find_element(By.XPATH, '//*[@id="hdtb-msb"]/div[1]/div/div[2]/a').click()
-            image = driver.find_element(By.XPATH, '//*[@id="islrg"]/div[1]/div[1]/a[1]/div[1]/img').get_attribute('src')
-            p.append(image)
-
-
-        except:
-            # for 1st position
-            st.image(noimg)
-
-
-    # img = Image.open(urlopen(p[0]))
-    # print(img)
-    return p
+# from selenium import webdriver
+# from selenium.webdriver.common.by import By
+#
+# driver = webdriver.Chrome(executable_path=r'C:\Users\RITWIK GANGULY\anaconda3\chromedriver.exe')
+#
+# def img_url(a):
+#     p = []
+#     driver.get("https://www.google.com/?&bih=746&biw=1536&hl=en")
+#     try:
+#         driver.find_element(By.XPATH, '/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input').clear()
+#         driver.find_element(By.XPATH, '/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input').send_keys(a)
+#
+#     except:
+#         driver.find_element(By.XPATH, '//*[@id="APjFqb"]').clear()
+#         driver.find_element(By.XPATH, '//*[@id="APjFqb"]').send_keys(a)
+#
+#     driver.find_element(By.XPATH, "/html/body/div[1]/div[3]/form/div[1]/div[1]/div[4]/center/input[1]").click()
+#     try:
+#         image = driver.find_element(By.XPATH, '//*[@id="tsuid_32"]').get_attribute('src')
+#         p.append(image)
+#
+#
+#     except:
+#
+#         try:
+#             # for 2nd position
+#             driver.find_element(By.XPATH, '//*[@id="hdtb-msb"]/div[1]/div/div[2]/a').click()
+#             image = driver.find_element(By.XPATH, '//*[@id="islrg"]/div[1]/div[1]/a[1]/div[1]/img').get_attribute('src')
+#             p.append(image)
+#
+#
+#         except:
+#             # for 1st position
+#             st.image(noimg)
+#
+#
+#     # img = Image.open(urlopen(p[0]))
+#     # print(img)
+#     return p
 
 # NLP section --------------------------------------------------------------------------------------------------
 
@@ -107,12 +107,12 @@ if butt:
     st.success('Done!')
     st.write("Your entered movie details:-")
     st.write("Your Movie Name - ", selected_movie_name)
-    try:
-        url = img_url(selected_movie_name)
-        st.image(url[0], width=200)
-
-    except:
-        pass
+    # try:
+    #     url = img_url(selected_movie_name)
+    #     st.image(url[0], width=200)
+    #
+    # except:
+    #     pass
     st.write("Lead Star - ", movies_list.iloc[movie_index].first_name)
     st.write("Director - ", movies_list.iloc[movie_index].Director)
     st.write("Rating - ", movies_list.iloc[movie_index].Rating)
@@ -126,12 +126,12 @@ if butt:
     for i in range(len(recom)):
         st.write("{}) {}".format(i+1, recom[i]))
 
-        try:
-            url = img_url(recom[i])
-            st.image(url[0], width=200)
-
-        except:
-            pass
+        # try:
+        #     url = img_url(recom[i])
+        #     st.image(url[0], width=200)
+        #
+        # except:
+        #     pass
         idx = movies_list[movies_list["Movies"] == recom[i]].index[0]
         st.write("Lead Star - ", movies_list.iloc[idx].first_name)
         st.write("Director - ", movies_list.iloc[idx].Director)
@@ -141,7 +141,7 @@ if butt:
         link = movies_list.iloc[idx].imb_link
         st.markdown("Movie link - {}".format(link), unsafe_allow_html=True)
 
-    driver.close()
+    # driver.close()
 
 
 
