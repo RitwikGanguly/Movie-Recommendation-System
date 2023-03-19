@@ -81,13 +81,13 @@ butt = st.button("Yeah!!!")
 
 # NLP section --------------------------------------------------------------------------------------------------
 
-# from sklearn.feature_extraction.text import CountVectorizer
-# cv = CountVectorizer(max_features=8500, stop_words="english")
-#
-# vectors = cv.fit_transform(movies_list["tags"]).toarray()
-#
-# from sklearn.metrics.pairwise import cosine_similarity
-# similar = cosine_similarity(vectors)
+from sklearn.feature_extraction.text import CountVectorizer
+cv = CountVectorizer(max_features=8500, stop_words="english")
+
+vectors = cv.fit_transform(movies_list["tags"]).toarray()
+
+from sklearn.metrics.pairwise import cosine_similarity
+similar = cosine_similarity(vectors)
 #
 # # ------------------------------------------------------------------------------------------------------------------
 #
