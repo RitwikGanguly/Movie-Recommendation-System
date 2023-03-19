@@ -14,7 +14,7 @@ PARENT_DIR = os.path.join(FILE_DIR, os.pardir)
 dir_of_interest = os.path.join(PARENT_DIR, "resources")
 
 IMAGE_PATH = os.path.join(dir_of_interest, "images", "mr.jpeg")
-def_img = os.path.join(dir_of_interest, "images", "download.png")
+# def_img = os.path.join(dir_of_interest, "images", "download.png")
 
 st.set_page_config(page_title="PickYourMovie",
                    page_icon="🎬",
@@ -23,7 +23,7 @@ st.set_page_config(page_title="PickYourMovie",
 st.title("Know Your Movie 🍿📽️🍿")
 
 img = image.imread(IMAGE_PATH)
-noimg = image.imread(def_img)
+# noimg = image.imread(def_img)
 st.image(img, width=700, caption="Movie Recommendation System")
 
 data_path = os.path.join(dir_of_interest, "data", "data_fm.pkl")
@@ -41,7 +41,8 @@ butt = st.button("Yeah!!!")
 # from selenium import webdriver
 # from selenium.webdriver.common.by import By
 #
-# driver = webdriver.Chrome(executable_path=r'C:\Users\RITWIK GANGULY\anaconda3\chromedriver.exe')
+# driver=webdriver.Chrome(executable_path=r'C:\Users\RITWIK GANGULY\anaconda3\chromedriver.exe')
+# driver.maximize_window()
 #
 # def img_url(a):
 #     p = []
@@ -140,6 +141,8 @@ if butt:
         st.write("Tags - ", movies_list.iloc[idx].tags)
         link = movies_list.iloc[idx].imb_link
         st.markdown("Movie link - {}".format(link), unsafe_allow_html=True)
+
+    st.subheader("Hope You Enjoyed 🙄🙄")
 
     # driver.close()
 
