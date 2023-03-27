@@ -5,5 +5,5 @@
 - Then by the **Content based NLP** the model is trained for test.
 - Last but not the least **Streamlit** is used to frame this in a web version.
 
-> THE GREATER VERSION OF THIS IS ALSO MADE, WHERE WE USED HTML, CSS, DJANGO FOR WEB DESIGNING....
+> THE GREATER VERSION OF THIS IS ALSO MADE, WHERE WE USED HTML, CSS, DJANGO FOR WEB DESIGNING,
 Available on - https://github.com/RitwikGanguly/MovieYourNight
