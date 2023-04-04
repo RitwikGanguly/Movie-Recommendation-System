@@ -11,3 +11,6 @@ histogram,horror,all,22
 bar,Sci-fi,all,22
 scatter,animation,all,22
 pie,comedy,2022,83
+scatter,Sci-fi,all,18
+scatter,comedy,all,18
+line,romance,all,18
