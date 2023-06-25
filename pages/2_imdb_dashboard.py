@@ -97,9 +97,9 @@ if butt:
 
 
 
-
-# histogram plot of certificate
 col1, col2, col3, col4, col5 = st.columns(5)
+# histogram plot of certificate
+
 if butt:
     if options == list(l.values())[0]:
         if g == "all" and y == "all":
@@ -161,7 +161,6 @@ if butt:
                 legend_title_font_color="white"
             )
             col1.plotly_chart(fig, use_container_width=True)
-
 
     elif options == list(l.values())[1]:
         if y == "all" and g == "all":
@@ -244,6 +243,8 @@ if butt:
             )
             col2.plotly_chart(fig, use_container_width=True)
 
+
+
     elif options == list(l.values())[2]:
         if y == "all" and g == "all":
             line = df.groupby("start_year")["Time"].agg("sum").reset_index()
@@ -309,7 +310,7 @@ if butt:
                 title_font_color="white",
                 legend_title_font_color="white"
             )
-            col3.plotly_chart(fig, use_container_width=True)
+            col4.plotly_chart(fig, use_container_width=True)
 
         elif g == "all" and y != "all":
             data = df[df["start_year"] == y]
@@ -322,7 +323,7 @@ if butt:
                 title_font_color="white",
                 legend_title_font_color="white"
             )
-            col3.plotly_chart(fig, use_container_width=True)
+            col4.plotly_chart(fig, use_container_width=True)
         elif g != "all" and y == "all":
             data = df[df[g] == 1]
             rg = data.groupby("start_year")["Rating"].mean().reset_index()
@@ -334,7 +335,7 @@ if butt:
                 title_font_color="white",
                 legend_title_font_color="white"
             )
-            col3.plotly_chart(fig, use_container_width=True)
+            col4.plotly_chart(fig, use_container_width=True)
         else:
             data = df[df["start_year"] == y]
             data = data[data[g] == 1]
@@ -347,7 +348,7 @@ if butt:
                 title_font_color="white",
                 legend_title_font_color="white"
             )
-            col3.plotly_chart(fig, use_container_width=True)
+            col4.plotly_chart(fig, use_container_width=True)
 
 
     elif options == list(l.values())[4]:
@@ -362,7 +363,7 @@ if butt:
                 title_font_color="white",
                 legend_title_font_color="red"
             )
-            col4.plotly_chart(fig, use_container_width=True)
+            col5.plotly_chart(fig, use_container_width=True)
 
         elif g == "all" and y != "all":
             data = df[df["start_year"] == y]
@@ -376,7 +377,7 @@ if butt:
                 title_font_color="white",
                 legend_title_font_color="red"
             )
-            col4.plotly_chart(fig, use_container_width=True)
+            col5.plotly_chart(fig, use_container_width=True)
 
         elif g != "all" and y == "all":
             data = df[df[g] == 1]
@@ -390,7 +391,7 @@ if butt:
                 title_font_color="white",
                 legend_title_font_color="red"
             )
-            col4.plotly_chart(fig, use_container_width=True)
+            col5.plotly_chart(fig, use_container_width=True)
 
         else:
             data = df[df["start_year"] == y]
@@ -405,13 +406,13 @@ if butt:
                 title_font_color="white",
                 legend_title_font_color="red"
             )
-            col4.plotly_chart(fig, use_container_width=True)
+            col5.plotly_chart(fig, use_container_width=True)
 
-    st.write("Thanks 😊😊")
-    st.write("Have a good day")
+        st.write("Thanks 😊😊")
+        st.write("Have a good day")
 
-else:
-    st.sidebar.write("Hey!! Submit Your Choices")
+    else:
+        st.sidebar.write("Hey!! Submit Your Choices")
 
 
 

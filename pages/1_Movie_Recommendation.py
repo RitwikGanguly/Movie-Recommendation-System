@@ -57,7 +57,7 @@ def img_url(a):
 
     driver.find_element(By.XPATH, "/html/body/div[1]/div[3]/form/div[1]/div[1]/div[4]/center/input[1]").click()
     try:
-        image = driver.find_element(By.XPATH, '//*[@id="tsuid_32"]').get_attribute('src')
+        image = driver.find_element(By.XPATH, '//*[@id="dimg_1"]').get_attribute('src')
         p.append(image)
 
 
@@ -65,14 +65,25 @@ def img_url(a):
 
         try:
             # for 2nd position
-            driver.find_element(By.XPATH, '//*[@id="hdtb-msb"]/div[1]/div/div[2]/a').click()
+            driver.find_element(By.XPATH, '//*[@id="cnt"]/div[5]/div/div/div/div[1]/div/a[2]').click()
             image = driver.find_element(By.XPATH, '//*[@id="islrg"]/div[1]/div[1]/a[1]/div[1]/img').get_attribute('src')
             p.append(image)
 
 
+
         except:
-            # for 1st position
-            st.image(noimg)
+
+            try:
+                # for 1st position
+                driver.find_element(By.XPATH, '//*[@id="cnt"]/div[5]/div/div/div/div[1]/div/a[1]').click()
+                image = driver.find_element(By.XPATH, '//*[@id="islrg"]/div[1]/div[1]/a[1]/div[1]/img').get_attribute('src')
+                p.append(image)
+
+
+            except:
+                # for 1st position
+                st.image(noimg)
+
 
 
     # img = Image.open(urlopen(p[0]))
